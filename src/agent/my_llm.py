@@ -1,9 +1,12 @@
+from pathlib import Path
 from langchain_deepseek import ChatDeepSeek
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import os
 
-load_dotenv(".env")
+Base_DIR = Path(__file__).resolve().parents[2]
+env_path = Base_DIR / ".env"
+load_dotenv(env_path)
 api_base = os.environ.get("OPENAI_API_BASE")
 api_key = os.environ.get("OPENAI_API_KEY")
 
