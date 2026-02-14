@@ -1,7 +1,12 @@
 from langchain_core.tools import tool
-from openai import api_key
+from dotenv import load_dotenv
+from pathlib import Path
 from langchain_community.tools.tavily_search import TavilySearchResults
 import os
+
+Base_DIR = Path(__file__).resolve().parents[3]
+env_path = Base_DIR / ".env"
+load_dotenv(env_path)
 
 tavily = TavilySearchResults(
     api_key=os.environ.get("TAVILY_API_KEY"),
@@ -9,7 +14,7 @@ tavily = TavilySearchResults(
 
 # @tool("web_search", parse_docstring=True)
 @tool
-def web_search(query: str) -> str:
+def web_search_old(query: str) -> str:
     """
     互联网搜索工具，可以搜索所有的信息
     Args:
@@ -33,7 +38,7 @@ def web_search(query: str) -> str:
         print(e)
         return f"Error: {e}"
 
-if __name__ == "__main__":
-    print(web_search.name)
-    print(web_search.description)
-    print(web_search.invoke({'query': "机器学习"}))
+# if __name__ == "__main__":
+    # print(web_search_old.name)
+    # print(web_search_old.description)
+    # print(web_search_old.invoke({'query': "机器学习"}))
