@@ -1,6 +1,6 @@
-from agent.tools.web_search_new import web_search_new
+from agents_tools.tools.tool_web_search_new import web_search_new
 from langchain.agents import create_agent
-from agent.my_llm import openai_llm
+from agents_tools.my_llm import openai_llm
 
 agent = create_agent(
     openai_llm,

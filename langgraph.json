@@ -1,7 +1,7 @@
 {
   "dependencies": ["."],
   "graphs": {
-    "agent": "./src/agent/tools/agent_web_search.py:agent"
+    "agent": "./src/agents_tools/agents/agent_MyWebSearch.py:agent"
   },
   "env": ".env"
 }

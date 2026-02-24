@@ -1,7 +1,7 @@
-# from web_search_old import web_search_old
-from web_search_new import web_search_new
+# from agents_tools.tools.tool_web_search_old import web_search_old
+from agents_tools.tools.tool_web_search_new import web_search_new
 from langchain_core.prompts import ChatPromptTemplate
-from agent.my_llm import openai_llm
+from agents_tools.my_llm import openai_llm
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "你是一个信息分析助手。你会基于提供的搜索结果做总结：只用结果中出现的信息，不要编造。输出中文。"),
